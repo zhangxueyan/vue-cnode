@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-@import "./assets/css/reset.scss";
+@import "./assets/css/reset.css";
 @import "./assets/font/iconfont.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

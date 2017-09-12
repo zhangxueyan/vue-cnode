@@ -8,7 +8,7 @@
           <div>
             <dl>
               <dd class="name">{{item.author.loginname}}</dd>
-              <dd class="time">3小时前</dd>
+              <dd class="time">{{item.last_reply_at | formatDate}}</dd>
             </dl>
             <p><span class="zhiding" v-if="index<5">置顶</span>{{item.title}}</p>
           </div>
@@ -17,7 +17,10 @@
           <div class="bt-container">
             <span><i class="iconfont icon-qbzuo05"></i>{{item.reply_count}}</span>
             <span class="read"><i class="iconfont icon-yueduliang"></i>{{item.visit_count}}</span>
-            <span class="share"><i class="iconfont icon-fenxiang"></i>分享</span>
+            <span class="share" v-if="item.tab === 'share'"><i class="iconfont icon-fenxiang"></i>分享</span>
+            <span class="share" v-if="item.tab === 'ask'"><i class="iconfont icon-fenxiang"></i>问答</span>
+            <span class="share" v-if="item.tab === 'job'"><i class="iconfont icon-fenxiang"></i>招聘</span>
+            <span class="share" v-if="item.tab === 'good'"><i class="iconfont icon-fenxiang"></i>招聘</span>
           </div>
           </div>
         </router-link>

@@ -1,19 +1,19 @@
 <template>
-  <div class="detail">
+  <div class="detail" v-if="newsDetail">
   <header><i class="iconfont icon-fanhui" @click = "goBack"></i></header>
   <div class="brief">
-  	<img :src="newsDetail.author.avatar_url" alt="">
-  	<div>
-  		<p>{{newsDetail.author.loginname}}</p>
+  	 <img :src="newsDetail.author.avatar_url" alt="">
+  	 <div>
+  		<p>{{newsDetail.author_id}}</p>
   		<p>#{{newsDetail.tab}}#</p>
   		<p>楼主发表于2天前</p>
-  	</div>
-  	<a href="javascript:;" class="shoucang">收藏</a>
+  	 </div>
+  	 <a href="javascript:;" class="shoucang">收藏</a>
   </div>
   <!-- 内容部分 -->
    <div class="detail-content">
   	  <div class="d-titl"><span v-if="newsDetail.top">置顶</span>{{newsDetail.title}}</div>
-      <div v-html = 'newsDetail.content' class="d-cont"></div>
+      <div v-html = 'newsDetail.content' class="d-cont markdown-body"></div>
    </div>
   </div>
 </template>
@@ -53,6 +53,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" type="text/css">
+// @import "github-markdown-css/github-markdown.css";
 header{
 	height: 43px;
 	width: 100%;

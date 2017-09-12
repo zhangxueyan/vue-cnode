@@ -5,6 +5,8 @@ import About from '@/pages/About'
 import Login from '@/pages/Login'
 import Post from '@/pages/Post'
 import Detail from '@/pages/Detail'
+import Loading from '@/pages/Loading'
+
 import All from '@/components/All'
 import Essence from '@/components/Essence'
 import Share from '@/components/Share'
@@ -16,7 +18,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect:'/home'
+      redirect:'/loading'
+    },
+    {
+      path: '/loading',
+      name:'loading',
+      component: Loading
     },
     {
       path: '/home',
@@ -29,7 +36,7 @@ export default new Router({
         {path:'/share',component:Share},
         {path:'/qa',component:Qa},
         {path:'/recruit',component:Recruit}
-        ]
+      ]
     },
     {
       path: '/about',
